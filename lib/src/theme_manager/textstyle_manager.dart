@@ -48,3 +48,14 @@ TextStyle getBlack30TextStyle({
     ColorManager.black30Color,
   );
 }
+
+TextStyle getBlackTextStyle({
+  double fontSize = FontSizeManager.f16,
+  FontWeight fontWeight = FontWeightManager.regular,
+}) {
+  return _getTextStyle(
+    fontSize,
+    fontWeight,
+    ColorManager.blackColor,
+  );
+}

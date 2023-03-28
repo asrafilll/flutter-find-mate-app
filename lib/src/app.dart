@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_saranghae/src/theme_manager/asset_manager.dart';
+import 'package:flutter_saranghae/src/features/authentication/presentation/sign_up_age_job_screen.dart';
+import 'package:flutter_saranghae/src/features/authentication/presentation/sign_up_screen.dart';
+import 'package:flutter_saranghae/src/features/authentication/presentation/sign_up_upload_photo_screen.dart';
 import 'package:flutter_saranghae/src/theme_manager/theme_data_manager.dart';
 
 class AppScreen extends StatelessWidget {
@@ -10,16 +12,15 @@ class AppScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: getApplicationThemeData(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Saranghae App"),
-        ),
-        body: Center(
-          child: Image.asset(AssetManager.heroImg),
-        ),
-      ),
+      initialRoute: SignUpScreen.routeName,
+      routes: {
+        SignUpScreen.routeName: (context) => const SignUpScreen(),
+        SignUpAgeJobScreen.routeName: (context) => const SignUpAgeJobScreen(),
+        SignUpUploadPhotoScreen.routeName: (context) =>
+            const SignUpUploadPhotoScreen(),
+      },
     );
   }
 }
