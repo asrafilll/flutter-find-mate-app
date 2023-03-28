@@ -3,6 +3,7 @@ import 'package:flutter_saranghae/src/common_widgets/custom_button_widget.dart';
 import 'package:flutter_saranghae/src/common_widgets/custom_text_button_widget.dart';
 import 'package:flutter_saranghae/src/common_widgets/logo_and_tagline_widget.dart';
 import 'package:flutter_saranghae/src/common_widgets/upload_photo_widget.dart';
+import 'package:flutter_saranghae/src/features/likes_you/presentation/explore_people_screen.dart';
 import 'package:flutter_saranghae/src/theme_manager/font_manager.dart';
 import 'package:flutter_saranghae/src/theme_manager/textstyle_manager.dart';
 import 'package:flutter_saranghae/src/theme_manager/values_manager.dart';
@@ -41,7 +42,9 @@ class SignUpUploadPhotoScreen extends StatelessWidget {
               const SizedBox(height: 240.0),
               CustomButtonWidget(
                 title: 'Update My Profile',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, ExplorePeopleScreen.routeName);
+                },
               ),
               const SizedBox(height: 20),
               CustomTextButtonWidget(
